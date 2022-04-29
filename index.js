@@ -2,20 +2,18 @@ import express from 'express';
 import { MongoClient } from "mongodb";
 import { mentorsRouter } from './Routes/mentors.js';
 import { studentsRouter } from './Routes/students.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 export const app = express();
-const port = 3000;
-
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-});
+const port = process.env.PORT ;
 
 app.use(express.json());
 
 //Connect to a mongodb database
-const MONGO_URL = "mongodb://localhost";
+const MONGO_URL = process.env.MONGO_URL;
+
 async function createConnection() {
   const client = new MongoClient(MONGO_URL);
   await client.connect();
@@ -31,3 +29,7 @@ console.log(dateTime);
 
 app.use('/students', studentsRouter);
 app.use('/mentors', mentorsRouter);
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+});
