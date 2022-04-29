@@ -1,10 +1,10 @@
 1.Create stduents:
- http://localhost:3000/students/create-student
+ http://localhost:4000/students/create-student
 2.Create mentor:
- http://localhost:3000/mentors/create-mentor
+ http://localhost:4000/mentors/create-mentor
 3.Get students for a mentor:
-  http://localhost:3000/mentors/:id 
+  http://localhost:4000/mentors/:id 
 4.Assign students for a mentor:
- http://localhost:3000/mentors/assign-students/:id
+ http://localhost:4000/mentors/assign-students/:id
 5.Assign mentor for student: 
- http://localhost:3000/students/assign-mentor/:id 
+ http://localhost:4000/students/assign-mentor/:id 
